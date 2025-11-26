@@ -1,11 +1,11 @@
 on:
   push:
     tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+'
+      - '[0-9]+.[0-9]+.[0-9]+'
   workflow_dispatch:
     inputs:
       tag_version:
-        description: "Docker image tag (e.g., 1.0.0)"
+        description: "Docker image tag (e.g., 1.0.0) Note: not for GIT tags[test purpose]"
         required: true
         type: string
 jobs:
