@@ -20,7 +20,7 @@ jobs:
         id: get_tag
         run: |
           if [[ "${{ github.event_name }}" == "push" ]]; then
-            echo "TAG=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+            echo "TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
           elif [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
             echo "TAG=${{ github.event.inputs.tag_version }}" >> $GITHUB_OUTPUT
           fi
